@@ -1,0 +1,10 @@
+server:
+  port: ${PORT:8080}
+logging:
+  level:
+    root: INFO
+    org:
+      hibernate: DEBUG
+      springframework: INFO
+    ps:
+      up: DEBUG

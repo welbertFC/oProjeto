@@ -15,8 +15,8 @@ class GenerateControllerImpl(
 ) : GenerateController{
 
 
-    override fun generateImages(request: GenerateImagesRequest, logo: MultipartFile): GenerateImageResponse {
-        return generateImagesService.generate(request, logo)
+    override fun generateImages(request: GenerateImagesRequest): GenerateImageResponse {
+        return generateImagesService.generate(request)
     }
 
     override fun listTemplate(): ListTemplateResponse {

@@ -8,3 +8,6 @@ logging:
       springframework: INFO
     ps:
       up: DEBUG
+
+uri:
+  node: ${URI_NODE}

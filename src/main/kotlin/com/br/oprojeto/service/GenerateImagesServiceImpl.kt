@@ -9,12 +9,16 @@ import com.br.oprojeto.service.data.ResponseTemplate
 import com.br.oprojeto.utils.templateAcai
 import com.br.oprojeto.utils.templateDentista
 import com.br.oprojeto.utils.templateHamburger
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 
 @Service
 class GenerateImagesServiceImpl(
-    private val restTemplate: RestTemplate
+    private val restTemplate: RestTemplate,
+
+    @Value("\${uri.node}")
+    private val uriNode: String
 
 ) : GenerateImagesService {
 
@@ -27,7 +31,7 @@ class GenerateImagesServiceImpl(
         )
 
         val response = restTemplate.postForObject(
-            "https://2f01-2804-1e68-c401-8202-f9d4-2cf3-911c-c0a7.ngrok-free.app/render",
+            uriNode,
             requestImage,
             ResponseTemplate::class.java
         )

@@ -27,6 +27,7 @@ class GenerateImagesServiceImpl(
             logoBase64 = request.logo,
             whatsApp = request.whatsApp,
             address = request.address,
+            price = request.price,
             templateId = request.idTemplate.toInt()
         )
 
@@ -37,10 +38,9 @@ class GenerateImagesServiceImpl(
         )
 
         return GenerateImageResponse(
+
             idTemplate = request.idTemplate,
-            images = listOf(
-                response?.result ?: "ERRO"
-            )
+            images = response?.result ?: listOf("Erro")
         )
 
 

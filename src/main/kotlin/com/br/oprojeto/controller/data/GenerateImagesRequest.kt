@@ -2,6 +2,7 @@ package com.br.oprojeto.controller.data
 
 import io.swagger.v3.oas.annotations.media.Schema
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
 import java.math.BigDecimal
 
 @Schema(description = "informações para gerar imagens")
@@ -18,7 +19,7 @@ data class GenerateImagesRequest(
         @field:Schema(description = "id do tempalte", example = "23")
         val idTemplate: String,
 
-        @field:NotBlank(message = "esta informação não pode ser nula ou vazia")
+        @field:NotNull(message = "esta informação não pode ser nula ou vazia")
         @field:Schema(description = "preço", example = "12.40")
         val price: BigDecimal,
 
